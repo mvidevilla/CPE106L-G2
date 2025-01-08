@@ -1,0 +1,10 @@
+boy
+man
+girl
+doctor
+teacher
+washerman
+student
+country
+city
+street
