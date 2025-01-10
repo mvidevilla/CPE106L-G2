@@ -1,0 +1,31 @@
+<diagram program="umletino" version="15.1"><zoom_level>11</zoom_level><element><id>UMLClass</id><coordinates><x>407</x><y>187</y><w>341</w><h>264</h></coordinates><panel_attributes>SavingsAccount
+--
+- name: str
+- pin: str
+- balance: float
+- RATE: float
+
+--
++ SavingsAccount(name: str, pin: str, balance: float)
++ __str__() -&gt; str
++ getBalance() -&gt; float
++ getName() -&gt; str
++ getPin() -&gt; str
++ deposit(amount: float) -&gt; None or str
++ withdraw(amount: float) -&gt; None or str
++ computeInterest() -&gt; float
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>11</x><y>187</y><w>308</w><h>264</h></coordinates><panel_attributes>Bank
+--
+-accounts: dict
+-fileName: str
+
+--
++ Bank(fileName: str)
++ __str__() -&gt; str
++ makeKey(name: str, pin: str) -&gt; str
++ add(account: SavingsAccount)
++ remove(name: str, pin: str) -&gt; SavingsAccount
++ get(name: str, pin: str) -&gt; SavingsAccount
++ computeInterest() -&gt; float
++ getKeys() -&gt; list
++ save(fileName: str)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>308</x><y>297</y><w>121</w><h>33</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element></diagram>
