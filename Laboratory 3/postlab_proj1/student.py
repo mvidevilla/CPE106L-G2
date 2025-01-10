@@ -42,7 +42,7 @@ class Student(object):
         if(self.getAverage() == target.getAverage()):
             return self.getName() + " and " + target.getName() + " have the same grade average."
         else:
-            return "Average grades are not equal"
+            return "The average scores of " + self.getName() + " and " + target.getName() +" are not equal"
             
     def compareLessThanAverage(self, target):
         if(self.getAverage() < target.getAverage()):
@@ -64,7 +64,7 @@ def main():
     print(student1)
     
     student2 = Student("Banana", 3)
-    student2.setScore(1, 99)
+    student2.setScore(1, 99.99)
     student2.setScore(2, 70)
     student2.setScore(3, 65)
     print(student2)
