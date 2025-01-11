@@ -45,5 +45,5 @@ def main():
     for student in students:
         print(student)
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
