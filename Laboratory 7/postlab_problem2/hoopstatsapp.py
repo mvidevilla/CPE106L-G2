@@ -10,9 +10,9 @@ import os
 
 def main():
     """Creates the data frame and view and starts the app."""
-    frame = pd.read_csv("newbrogdonstats.csv")
+    frame = pd.read_csv("cleanbrogdonstats.csv")
     cleanStats(frame)
-    HoopStatsView(frame).mainloop()
+    HoopStatsView(pd.read_csv("newbrogdonstats.csv")).mainloop()
 
 def cleanStats(oldFrame):
     """Separates FG, 3PT, and FT into two columns,  and exports a new data set"""
@@ -48,7 +48,7 @@ def cleanStats(oldFrame):
             framing.insert(ft_index+1, "FTA", framing.pop("FTA"))
 
     else:
-        framing = pd.read_csv(oldFrame)
+        framing = oldFrame
         if 'FG' in framing.columns:
             #FG Col
             framing[["FGM", "FGA"]] = framing["FG"].str.split("-", expand=True).astype(int)
